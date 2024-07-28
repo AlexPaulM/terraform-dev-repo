@@ -1,4 +1,4 @@
-main.tf description.
+Explanation
 
     In this readme I will describe the strategy for setting up the Azure infrastructure using Terraform :
     - Provider Configuration: Configured the Azure provider to enable interaction with Azure resources.
@@ -16,4 +16,9 @@ main.tf description.
         - Assigned network interfaces and generated admin passwords for the VMs.
         - Used a provisioner to run initial setup commands on the VMs, including a ping test to verify network connectivity. Which unfortunately failed, but will do a revision on the code to fix this.
 
-
+How to use the tfvars file:
+       
+       terraform plan -var-file="terraform.tfvars"
+       terraform apply -var-file="terraform.tfvars"
+       
+       

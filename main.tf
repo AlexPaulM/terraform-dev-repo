@@ -106,10 +106,10 @@ resource "azurerm_virtual_machine" "dev" {
   }
 
   storage_image_reference {
-    publisher = "Canonical"                                         # Image publisher
-    offer     = "0001-com-ubuntu-server-focal"                      # Image offer
-    sku       = "20_04-lts"                                         # Image SKU
-    version   = "latest"                                            # Image version
+    publisher = var.vm_os_images[count.index].publisher             # Uses OS image publisher from the list
+    offer     = var.vm_os_images[count.index].offer                 # Uses OS image offer from the list
+    sku       = var.vm_os_images[count.index].sku                   # Uses OS image SKU from the list
+    version   = var.vm_os_images[count.index].version               # Uses OS image version from the list
   }
 
   os_profile {

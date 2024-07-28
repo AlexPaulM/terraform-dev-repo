@@ -30,3 +30,21 @@
   type        = list(number)                                 # Specifies the type of variable as a list of numbers
   default     = [30, 31, 35, 34]                             # Default list of OS disk sizes for the VMs
 }
+
+variable "vm_os_images" {
+  description = "List of OS image configurations for each VM"
+  type = list(object({
+    publisher = string
+    offer     = string
+    sku       = string
+    version   = string
+  }))
+  default = [
+    {
+      publisher = "Canonical"                    # Publisher of the OS image                    
+      offer     = "0001-com-ubuntu-server-focal" # Offer name of the OS image.
+      sku       = "20_04-lts"                    # Verison or edition of offer.
+      version   = "latest"                       # Version of the OS image.
+    }
+  ]
+}

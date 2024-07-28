@@ -1,5 +1,6 @@
 main.tf description.
-In this readme I will describe the strategy for setting up the Azure infrastructure using Terraform :
+
+    In this readme I will describe the strategy for setting up the Azure infrastructure using Terraform :
     - Provider Configuration: Configured the Azure provider to enable interaction with Azure resources.
     - Resource Group Creation: Create a resource group to hold all related resources.
     - Network Setup:

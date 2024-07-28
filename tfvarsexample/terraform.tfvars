@@ -29,3 +29,12 @@ resource_group_name = "development-resources"
 
 # Define the number of VMs to create
 vm_count = 4
+
+# Define OS details
+vm_os_images = [
+  {
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts"
+    version   = "latest"
+  }
